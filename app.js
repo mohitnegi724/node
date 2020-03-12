@@ -1,9 +1,13 @@
-const http = require('http')
-const fs = require('fs')
-const routes = require('./routes');
+const express = require('express')
+const auth = require('./route/auth')
+const home = require('./home')
+const notFound = require('./notFound')
+const app = express();
 
-const server = http.createServer(routes)
+app.use('/admin',auth)
+app.use(home)
+app.use(notFound)
 
-server.listen(3000,()=>{
+app.listen(3000,()=>{
     console.log("Server Started..")
 })
