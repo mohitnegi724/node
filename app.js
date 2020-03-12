@@ -1,13 +1,21 @@
-const express = require('express')
-const auth = require('./route/auth')
-const home = require('./home')
-const notFound = require('./notFound')
+const path = require('path');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
 
-app.use('/admin',auth)
-app.use(home)
-app.use(notFound)
+const adminData = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
 
-app.listen(3000,()=>{
-    console.log("Server Started..")
-})
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/admin', adminData.routes);
+app.use(shopRoutes);
+
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+});
+
+app.listen(3000);
