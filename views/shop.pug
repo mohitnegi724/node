@@ -1,0 +1,34 @@
+<!DOCTYPE>
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title My Shop
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/product.css")
+    body
+        header.main-header
+            nav.main-header__nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a.active(href="") Shop
+                    li.main-header__item
+                        a(href="/admin/add-product") Add Product
+        main
+            h1 Products
+
+            if products.length > 0
+                .grid
+                    each product in products
+                        article.card.product-item
+                            header.card__header
+                                h1.productTitle #{product.title}
+                            .card__image
+                                img(src="https://www.rd.com/wp-content/uploads/2017/10/This-Is-How-Long-It-Takes-To-Read-The-Whole-Dictionary_509582812-Billion-Photos_FB-e1574101045824.jpg", alt="Product Image")
+                            .card__content
+                                h2.productPrice 19,200
+                                p.productDescription A very Interesting book.
+                            .card__actions
+                                button.btn Add To Cart
+            else
+                h3 No Products
+
