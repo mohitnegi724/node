@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+input{
+    outline: none;
+    border: none;
+    padding: 4px;
+    padding-left: 20px;
+    height: 40px;
+    box-shadow: 0 0 2px 0 rgba(30,28,28,.4);
+}
+
+.createUser{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+    background-color: brown;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.container{
+    padding: 10px;
+    width:100%;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.formContainer{
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: 60px;
+    padding-right: 10px;
+}
+
+.userMainContainer{
+    position: relative;
+    display: inline-table;
+}
+
+.userContainer{
+    margin-bottom:20px;
+}
+
+.edit{
+    outline:none;
+    border: none;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+}

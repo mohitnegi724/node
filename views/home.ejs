@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Learn Node Js | 2020
+        </title>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div class="container">
+            <form class="formContainer" action="/routes/create-user" method="POST">
+                <input type="text" name="username" placeholder="username"/>
+                <input type="tel" name="contact" placeholder="contact"/>
+                <input type="mail" name="email" placeholder="email"/>
+                <button type="submit" class="createUser">
+                    Create User
+                </button>
+            </form>
+            <div class="userMainContainer">
+                <% if(users.length){%>
+                    <%for(var i=0; i<users.length; i++){%>
+                        <div class="userContainer">
+                            <h3>
+                                <%=users[i].username%>
+                            </h3>
+                            <small>
+                                <%=users[i].contact?users[i].contact:"No contact"%>
+                            </small>
+                            <br/>
+                            <small>
+                                <%=users[i].email?users[i].email:"No email"%>
+                            </small>
+                            <br/>
+                            <button class="edit" onclick="window.location.search=<%=users[i].contact%>">
+                                edit
+                            </button>
+                        </div>
+                    <%}%>
+                <%}else{%>
+                    <p>No User</p>
+                <%}%>
+            </div>
+        </div>
+    </body>    
+</html>
