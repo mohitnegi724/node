@@ -4,7 +4,7 @@
         <title>
             Learn Node Js | 2020
         </title>
-        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="css/home.css">
     </head>
     <body>
         <div class="container">
@@ -31,8 +31,10 @@
                                 <%=users[i].email?users[i].email:"No email"%>
                             </small>
                             <br/>
-                            <button class="edit" onclick="window.location.search=<%=users[i].contact%>">
-                                edit
+                            <button class="edit">
+                                <a href='http://localhost:3000/routes/delete/<%=users[i].username%>'>
+                                    Delete
+                                </a>
                             </button>
                         </div>
                     <%}%>
